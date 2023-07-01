@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>login</title>
+    <link rel="stylesheet" href="style.css">
+    
+    
+  </head>
+  <body>
+    <div class="logo">
+      <h3>
+        BitSMart
+      </h3>
+    </div>
+    <div class="center">
+      <h1>Login</h1>
+      <form method="post">
+        <div class="radio">
+          
+          <label class="C"><input type="radio" name="one" value="customer"> Customer 
+            <span class="check"></span> </label>
+        
+          
+          <label class="C"><input type="radio" name="one" value="manager"> Manager 
+          <span class="check"></span> </label>
+        
+          
+          <label class="C"><input type="radio" name="one" value="admin"> Admin
+            <span class="check"></span></label>
+        </div>
+        <div class="txt_field">
+          <input type="text" id="email" required>
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" id="password" required>
+          
+          <span></span>
+          <i class="bi bi-eye-slash" id="togglePassword"></i>
+          <label>Password</label>
+        </div>
+        
+        <p id="userSubmit"> Sign in</p>
+        <div class="signup_link">
+          Not a member? <a href="#">Signup</a>
+        </div>
+
+      </form>
+    </div>
+    <div class="rect"></div>
+    <div class="oval1"></div>
+    <div class="oval2"></div>
+    <img src="grocery-cart.png" alt="" class="imag">
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+    <script src="login.js"></script>
+    <script>
+      const submitInput = document.getElementById("userSubmit")
+      const roleInput = document.getElementsByName("one");
+
+      const emailInput = document.getElementById("email");
+      const passwordInput = document.getElementById("password");
+      submitInput.addEventListener("click", () => {
+          const email = emailInput.value;
+          const password = passwordInput.value;
+          let role = "customer";
+
+          for(i = 0; i < roleInput.length; i++) {
+                  if(roleInput[i].type="radio") {
+                      if(roleInput[i].checked){
+                        role = roleInput[i].value;
+                      }
+                  }
+              }
+
+          axios.post("http://localhost:8080/user/signin",
+              {
+                  "email": email,
+                  "password": password,
+                  "walletBalance": 100
+              }
+          )
+              .then((response) => {
+                  if(response.data.status=="success"){
+                    if(role == "manager"){
+                      window.location.replace('/AdminPage/bootstrap-5.2.3-examples/dashboard/manager.html')
+                    }
+                    else if(role == "admin"){
+                      window.location.replace('/AdminPage/bootstrap-5.2.3-examples/dashboard/admin.html')
+                    }
+                    else{
+                      window.location.replace('/home.html')
+                    }
+                    }
+              })
+              .catch(err => alert("Incorrect password"));
+      });
+
+  </script>
+
+
+   
+  </body>
+</html>

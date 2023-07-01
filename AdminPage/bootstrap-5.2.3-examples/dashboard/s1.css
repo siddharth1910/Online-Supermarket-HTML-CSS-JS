@@ -1,0 +1,156 @@
+*{
+    box-sizing:  border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: Inter;
+}
+a{
+    text-decoration: none;
+}
+.searchForm{
+    width: 50%;
+
+}
+.rightSide{
+    margin-left: 3rem;
+
+}
+
+.headerNav li.nav-item .nav-link{
+    
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 10px;
+
+}
+
+.headerNav a.navbar-brand{
+    
+    font-size: 2.5rem;
+    font-family: Inter;
+
+
+}
+
+.headerNav{
+    padding: 10px 0px;
+    background-color: #ffffff;
+    
+
+}
+.me-2, .btn-success{
+    border-radius: 15px;
+    
+}
+
+.rightSide a{
+    display: inline-block;
+    color: black;
+    margin: 0px 10px;
+    font-size: 1.2rem;
+
+
+
+}
+
+
+
+ .footer-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-heading h3{
+    font-size: 1.56 rem;
+    font-weight: 700;
+    color: #202020;
+    letter-spacing: 0.5px;
+}
+
+
+
+
+.team-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+
+
+}
+
+
+
+.team-box img{
+   
+    object-fit: contain;
+    object-position: center;
+    transition: all ease 0.1s;
+
+}
+
+
+.team-box span{
+    color: #393939;
+    font-size: 0.8rem;
+    margin-top: 20px;
+    letter-spacing: 0.3px;
+    
+    font-family: inter;
+     
+}
+
+.team-box:hover img{
+    transform: scale(1.1);
+    transition: all ease 0.1s;
+}
+
+footer{
+    background-color: #FAFAFBFF;
+    padding: 50px 20px;
+    
+     
+}
+.footer-container{
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+.team-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px;
+    border-radius: 10px;
+    min-height: 130px;
+    width: 120px;
+
+}
+.list-group-item img{
+    position:static;
+    width: 65px; 
+    height: 50x; 
+    border-radius: 100px; 
+
+}
+.container-available-balance{
+
+    background: #E7FFF3FF; /* primary-100 */
+    border-radius: 4px; /* border-m */
+    border-width: 1px; 
+    border-color: #00D66BFF; /* primary-500 */
+    border-style: solid; 
+}
+.container-available-balance img{
+    height: 51px;
+    width: 51px;
+}
+
+.checkout-container h2{
+    font-weight: bold;
+}
